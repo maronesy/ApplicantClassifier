@@ -26,7 +26,6 @@ class StrategyOne implements AdmissionStrategy{
             return "instant accept";
         } else if (rejected()) {
             app.setDecision("instant reject");
-            // System.out.println(rejectReason());
             return "instant reject, reason: " + rejectReason();
         } else {
             app.setDecision("further review");
@@ -52,7 +51,6 @@ class StrategyOne implements AdmissionStrategy{
      * @return: boolean indicating rejection status
      */
     public boolean rejected() {
-        // TODO Auto-generated method stub
         if (!felloniesMet() || gpaNotMet() || app.getAge() < 0 || !validateFirstName() || !validateLastName()) {
             return true;
         }
@@ -84,7 +82,6 @@ class StrategyOne implements AdmissionStrategy{
      * @return: boolean true if the criterion is met and false if not
      */
     public boolean ageMet() {
-        // TODO Auto-generated method stub
         int age = app.getAge();
         return age >= 17 && age < 26 && app.getState().equals("California") || age > 80;
     }
@@ -96,7 +93,6 @@ class StrategyOne implements AdmissionStrategy{
      * @return: boolean true if the criterion is met and false if not
      */
     public boolean gpaMet() {
-        // TODO Auto-generated method stub
         return gpaPercentage() >= 90;
     }
 
@@ -116,7 +112,6 @@ class StrategyOne implements AdmissionStrategy{
      * @return: boolean true if criterion is met and false if not
      */
     public boolean satactMet() {
-        // TODO Auto-generated method stub
         return app.getsatScore() > 1920 || app.getactScore() > 27;
     }
 
@@ -127,7 +122,6 @@ class StrategyOne implements AdmissionStrategy{
      * @return: boolean true it the criterion is met and false if not
      */
     public boolean felloniesMet() {
-        // TODO Auto-generated method stub
         return app.getNumFel() < 1;
     }
     
@@ -138,7 +132,6 @@ class StrategyOne implements AdmissionStrategy{
      * @return: boolean true if yes and boolean false if no
      */
     public boolean validateFirstName() {
-        // TODO Auto-generated method stub
         return app.getfName().matches("[A-Z][a-z]*");
     }
 
@@ -149,7 +142,6 @@ class StrategyOne implements AdmissionStrategy{
      * @return: boolean true if the criterion is met and false if not
      */
     public boolean validateLastName() {
-        // TODO Auto-generated method stub
         return app.getlName().matches("[A-Z][a-z]*");
     }
     
