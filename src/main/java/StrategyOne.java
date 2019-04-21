@@ -37,7 +37,7 @@ class StrategyOne implements AdmissionStrategy{
      * This method returns a boolean indicating whether 
      * the applicant has met the instant accept criteria
      * 
-     * @return: boolean indicating acceptance status
+     * @return: Boolean indicating acceptance status
      */
     public boolean accepted() {
         if (ageMet() && gpaMet() && satactMet() && !rejected()) return true;
@@ -48,12 +48,12 @@ class StrategyOne implements AdmissionStrategy{
      * This method returns a boolean indicating whether 
      * the applicant has met the instant reject criteria
      * 
-     * @return: boolean indicating rejection status
+     * @return: Boolean indicating rejection status
      */
     public boolean rejected() {
-        if (!felloniesMet() || gpaNotMet() || app.getAge() < 0 || !validateFirstName() || !validateLastName()) {
-            return true;
-        }
+        if (!felloniesMet() || gpaNotMet() || app.getAge() < 0 || 
+                !validateFirstName() || !validateLastName()) return true;
+
         else return false;
     }
     
@@ -79,7 +79,7 @@ class StrategyOne implements AdmissionStrategy{
     /**
      * This method determines whether the applicant meets the age/state requirements
      * 
-     * @return: boolean true if the criterion is met and false if not
+     * @return: Boolean true if the criterion is met and false if not
      */
     public boolean ageMet() {
         int age = app.getAge();
@@ -90,7 +90,7 @@ class StrategyOne implements AdmissionStrategy{
      * This method determines whether the applicant meets 
      * the gpa requirements for instant acceptance
      * 
-     * @return: boolean true if the criterion is met and false if not
+     * @return: Boolean true if the criterion is met and false if not
      */
     public boolean gpaMet() {
         return gpaPercentage() >= 90;
@@ -100,7 +100,7 @@ class StrategyOne implements AdmissionStrategy{
      * This method determines whether the applicant meets 
      * the gpa criterion for instant rejection
      * 
-     * @return: boolean true if the criterion is met and false if not
+     * @return: Boolean true if the criterion is met and false if not
      */
     public boolean gpaNotMet() {
         return gpaPercentage() < 70;
@@ -109,7 +109,7 @@ class StrategyOne implements AdmissionStrategy{
     /**
      * This method determines whether the applicant meets the SAT and/or ACT requirements
      * 
-     * @return: boolean true if criterion is met and false if not
+     * @return: Boolean true if criterion is met and false if not
      */
     public boolean satactMet() {
         return app.getsatScore() > 1920 || app.getactScore() > 27;
@@ -119,7 +119,7 @@ class StrategyOne implements AdmissionStrategy{
      * This method determines whether the applicant has 
      * one or more felonies in the past five years
      * 
-     * @return: boolean true it the criterion is met and false if not
+     * @return: Boolean true it the criterion is met and false if not
      */
     public boolean felloniesMet() {
         return app.getNumFel() < 1;
@@ -129,7 +129,7 @@ class StrategyOne implements AdmissionStrategy{
      * This method determines whether the applicant's first name starts with 
      * an upper case letter and the rest of it's letters are lower case or not
      * 
-     * @return: boolean true if yes and boolean false if no
+     * @return: Boolean true if yes and boolean false if no
      */
     public boolean validateFirstName() {
         return app.getfName().matches("[A-Z][a-z]*");
@@ -139,7 +139,7 @@ class StrategyOne implements AdmissionStrategy{
      * This method determines whether the applicant's last name starts with 
      * an upper case letter and the rest of it's letters are lower case or not
      * 
-     * @return: boolean true if the criterion is met and false if not
+     * @return: Boolean true if the criterion is met and false if not
      */
     public boolean validateLastName() {
         return app.getlName().matches("[A-Z][a-z]*");
@@ -148,7 +148,7 @@ class StrategyOne implements AdmissionStrategy{
     /**
      * This method calculates the applicant's gpa percentage
      * 
-     * @return: the gpa percentage as a double
+     * @return: The gpa percentage as a double
      */
     public double gpaPercentage() {
         return (app.gethsGPA()/app.getGpaScale())*100;

@@ -72,88 +72,88 @@ public class Applicant {
     }
     
     /**
-     * getter method for first name    
-     * @return: the first name variable fName
+     * Getter method for first name    
+     * @return: The first name variable fName
      */
     public String getfName() {
         return fName;
     }
     
     /**
-     * getter method for last name
-     * @return: the last name variable lName
+     * Getter method for last name
+     * @return: The last name variable lName
      */
     public String getlName() {
         return lName;
     }
     
     /**
-     * getter method for the applicant's state
-     * @return: the state variable
+     * Getter method for the applicant's state
+     * @return: The state variable
      */
     public String getState() {
         return state;
     }
     
     /**
-     * getter method for the applicant's age
-     * @return: the age variable
+     * Getter method for the applicant's age
+     * @return: The age variable
      */
     public int getAge() {
         return age;
     }
     
     /**
-     * getter method for the applicant's high school gpa
-     * @return: the GPA variable
+     * Getter method for the applicant's high school gpa
+     * @return: The GPA variable
      */
     public double gethsGPA() {
         return hsGpa;
     }
     
     /**
-     * getter method for the applicant's GPA scale
-     * @return: the GPA scale variable 
+     * Getter method for the applicant's GPA scale
+     * @return: The GPA scale variable 
      */
     public float getGpaScale() {
         return gpaScale;
     }
     
     /**
-     * getter method for the applicant's SAT score
-     * @return: the SAT score variable
+     * Getter method for the applicant's SAT score
+     * @return: The SAT score variable
      */
     public int getsatScore() {
         return satScore;
     }
     
     /**
-     * getter method for the applicant's ACT score
-     * @return: the ACT score variable
+     * Getter method for the applicant's ACT score
+     * @return: The ACT score variable
      */
     public int getactScore() {
         return actScore;
     }
     
     /**
-     * getter method for the applicant's felonies in the past 5 years
-     * @return: the number of felonies variable 
+     * Getter method for the applicant's felonies in the past 5 years
+     * @return: The number of felonies variable 
      */
     public int getNumFel() {
         return numFelonies;
     }
     
     /**
-     * getter method for the applicant's admission decision
-     * @return: the admission decision variable
+     * Getter method for the applicant's admission decision
+     * @return: The admission decision variable
      */
     public String getDecision() {
         return decision;
     }
     
     /**
-     * setter method for the applicant's admission decision
-     * @param dec: the decision made based on the admission criteria 
+     * Setter method for the applicant's admission decision
+     * @param dec: The decision made based on the admission criteria in the strategy class 
      */
     public void setDecision(String dec) {
         decision = dec;
