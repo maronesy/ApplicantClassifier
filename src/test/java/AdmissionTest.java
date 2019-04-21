@@ -12,6 +12,10 @@ public class AdmissionTest{
         
         Admission adm = new Admission();
         
+        
+       /**
+        * California applicant who meets the instant accept criteria
+        */
         Applicant app = new Applicant("John", "Davis", 20, 3.7, 4, 1990, "California", 29, 0);
         
         AdmissionStrategy stOne = new StrategyOne(app);
@@ -30,7 +34,7 @@ public class AdmissionTest{
         Admission adm = new Admission();
         
         /**
-         *  Out of state applicant who is more that 82 years old
+         *  Out of state applicant who is more that 82 years old and meets the instant accept criteria
          *  Calling the constructor without ACT score
          */
         Applicant app = new Applicant("Jimmy", "Johnson", 82, 3.7, 4, 1990, "Texas", 0);
