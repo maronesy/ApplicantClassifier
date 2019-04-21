@@ -7,13 +7,15 @@ import static org.junit.Assert.assertTrue;
 public class StrategyOneTest{
     
     @Test
-    public void metTest() {
+    public void criterionMetTest() {
         
         Applicant app = new Applicant("Souhayl", "Maronesy", 23, 3.7, 4, 1990, "California", 29, 0);
         
         StrategyOne stOne = new StrategyOne(app);
         
-        // assert statements
+        /**
+         * Assert statements testing whether all the criterion have been met
+         */
         assertTrue(stOne.validateFirstName());
         assertTrue(stOne.validateLastName());
         assertTrue(stOne.ageMet());
@@ -24,13 +26,15 @@ public class StrategyOneTest{
     }    
     
     @Test
-    public void notMetTest() {
+    public void criterionNotMetTest() {
         
         Applicant app = new Applicant("SouHayl", "maronesy", 43, 3.3, 4, 1900, "Washington", 23, 1);
         
         StrategyOne stOne = new StrategyOne(app);
 
-        // assert statements
+        /**
+         * Asserts statements showing that none of the criterion have been met
+         */
         assertFalse(stOne.validateFirstName());
         assertFalse(stOne.validateLastName());
         assertFalse(stOne.ageMet());

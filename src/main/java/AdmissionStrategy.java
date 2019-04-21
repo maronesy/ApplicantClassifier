@@ -1,8 +1,13 @@
 
 public interface AdmissionStrategy{
     
-    // every strategy class should implement the following methods, however there will be
-    // other methods in each strategy class implementing the accept/reject criteria
+    /**
+     * Admission Strategy interface:
+     * 
+     * Every strategy class which implements this interface will have to 
+     * implement the following methods, however there will be other methods 
+     * in each strategy class implementing the accept/reject criteria
+     */
     
     public String decision();
 

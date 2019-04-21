@@ -8,58 +8,6 @@ import static org.junit.Assert.assertTrue;
 public class AdmissionTest{
     
     @Test
-    public void furtherReviewTestOne() {
-        
-        Admission adm = new Admission();
-        
-        Applicant app = new Applicant("Souhayl", "Maronesy", 33, 3.4, 4, 1990, "California", 29, 0);
-        
-        AdmissionStrategy stOne = new StrategyOne(app);
-        
-        String admDec = adm.decision(stOne);
-
-        // assert statements
-        assertFalse(stOne.accepted());
-        assertFalse(stOne.rejected());
-        assertEquals(admDec, "further review");       
-    }    
-    
-    @Test
-    public void furtherReviewTestTwo() {
-        
-        Admission adm = new Admission();
-        
-        Applicant app = new Applicant("Souhayl", "Maronesy", 23, 3.7, 4, 1990, "Washington", 29, 0);
-        
-        AdmissionStrategy stOne = new StrategyOne(app);
-        
-        String admDec = adm.decision(stOne);
-
-        // assert statements
-        assertFalse(stOne.accepted());
-        assertFalse(stOne.rejected());
-        assertEquals(admDec, "further review");      
-    } 
-    
-    @Test
-    public void furtherReviewTestThree() {
-        
-        Admission adm = new Admission();
-        
-        // applicant with no act score
-        Applicant app = new Applicant("Souhayl", "Maronesy", 23, 3.7, 4, 1980, "Washington", 0);
-        
-        AdmissionStrategy stOne = new StrategyOne(app);
-        
-        String admDec = adm.decision(stOne);
-
-        // assert statements
-        assertFalse(stOne.accepted());
-        assertFalse(stOne.rejected());
-        assertEquals(admDec, "further review");      
-    } 
-    
-    @Test
     public void instantAcceptTestOne() {
         
         Admission adm = new Admission();
@@ -171,4 +119,55 @@ public class AdmissionTest{
         assertEquals(admDec, rejectReason);    
     } 
     
+    @Test
+    public void furtherReviewTestOne() {
+        
+        Admission adm = new Admission();
+        
+        Applicant app = new Applicant("Souhayl", "Maronesy", 33, 3.4, 4, 1990, "California", 29, 0);
+        
+        AdmissionStrategy stOne = new StrategyOne(app);
+        
+        String admDec = adm.decision(stOne);
+
+        // assert statements
+        assertFalse(stOne.accepted());
+        assertFalse(stOne.rejected());
+        assertEquals(admDec, "further review");       
+    }    
+    
+    @Test
+    public void furtherReviewTestTwo() {
+        
+        Admission adm = new Admission();
+        
+        Applicant app = new Applicant("Souhayl", "Maronesy", 23, 3.7, 4, 1990, "Washington", 29, 0);
+        
+        AdmissionStrategy stOne = new StrategyOne(app);
+        
+        String admDec = adm.decision(stOne);
+
+        // assert statements
+        assertFalse(stOne.accepted());
+        assertFalse(stOne.rejected());
+        assertEquals(admDec, "further review");      
+    } 
+    
+    @Test
+    public void furtherReviewTestThree() {
+        
+        Admission adm = new Admission();
+        
+        // applicant with no act score
+        Applicant app = new Applicant("Souhayl", "Maronesy", 89, 3.3, 4, 1980, "Washington", 0);
+        
+        AdmissionStrategy stOne = new StrategyOne(app);
+        
+        String admDec = adm.decision(stOne);
+
+        // assert statements
+        assertFalse(stOne.accepted());
+        assertFalse(stOne.rejected());
+        assertEquals(admDec, "further review");      
+    }   
 }
