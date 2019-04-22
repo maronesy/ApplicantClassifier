@@ -9,7 +9,11 @@ public class StrategyOneTest{
     @Test
     public void criterionMetTest() {
         
-        Applicant app = new Applicant("Souhayl", "Maronesy", 23, 3.7f, 4, 1990, "California", 29, 0);
+        /**
+         * California applicant who meets all the instant accept criteria
+         */
+         Applicant app = new Applicant.ApplicantBuilder("John", "Davis", "California", 20, 3.7f, 4.0f, 0)
+                 .setSAT(1990).setACT(28).build();
         
         StrategyOne stOne = new StrategyOne(app);
         
@@ -28,7 +32,11 @@ public class StrategyOneTest{
     @Test
     public void criterionNotMetTest() {
         
-        Applicant app = new Applicant("SouHayl", "maronesy", 43, 3.3f, 4, 1900, "Washington", 23, 1);
+        /**
+         * Applicant who meets all the reject requirements
+         */
+        Applicant app = new Applicant.ApplicantBuilder("tom", "ParKer", "New York", -19, 2.0f, 4.0f, 4)
+                .setSAT(1900).setACT(20).build();
         
         StrategyOne stOne = new StrategyOne(app);
 
@@ -39,7 +47,7 @@ public class StrategyOneTest{
         assertFalse(stOne.validateLastName());
         assertFalse(stOne.ageMet());
         assertFalse(stOne.gpaMet());
-        assertFalse(stOne.gpaNotMet());       
+        assertTrue(stOne.gpaNotMet());       
         assertFalse(stOne.satactMet());   
         assertFalse(stOne.felloniesMet());     
     } 

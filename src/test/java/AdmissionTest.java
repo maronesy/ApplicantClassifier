@@ -16,7 +16,8 @@ public class AdmissionTest{
        /**
         * California applicant who meets the instant accept criteria
         */
-        Applicant app = new Applicant("John", "Davis", 20, 3.7f, 4, 1990, "California", 29, 0);
+        Applicant app = new Applicant.ApplicantBuilder("John", "Davis", "California", 20, 3.7f, 4.0f, 0)
+                .setSAT(1990).setACT(28).build();
         
         AdmissionStrategy stOne = new StrategyOne(app);
         
@@ -37,7 +38,8 @@ public class AdmissionTest{
          *  Out of state applicant who is more that 82 years old and meets the instant accept criteria
          *  Calling the constructor without ACT score
          */
-        Applicant app = new Applicant("Jimmy", "Johnson", 82, 3.7f, 4, 1990, "Texas", 0);
+        Applicant app = new Applicant.ApplicantBuilder("Jimmy", "Johnson", "Texas", 82, 3.7f, 4.0f, 0)
+                .setSAT(1990).build();
         
         AdmissionStrategy stOne = new StrategyOne(app);
         
@@ -58,7 +60,8 @@ public class AdmissionTest{
          *  Out of state applicant who is more that 82 years old
          *  Calling the constructor without SAT score
          */
-        Applicant app = new Applicant("Jimmy", "Johnson", 82, 3.7f, 4, "Texas", 30, 0);
+        Applicant app = new Applicant.ApplicantBuilder("Jimmy", "Johnson", "Texas", 82, 3.7f, 4.0f, 0)
+                .setACT(30).build();
         
         AdmissionStrategy stOne = new StrategyOne(app);
         
@@ -78,8 +81,9 @@ public class AdmissionTest{
         /**
          * Applicant who meets all the reject requirements
          */
-        Applicant app = new Applicant("tom", "ParKer", -19, 2.0f, 4, 1900, "New York", 20, 4);
-        
+        Applicant app = new Applicant.ApplicantBuilder("tom", "ParKer", "New York", -19, 2.0f, 4.0f, 4)
+                .setSAT(1900).setACT(20).build();
+
         AdmissionStrategy stOne = new StrategyOne(app);
         
         String admDec = adm.decision(stOne);
@@ -102,7 +106,8 @@ public class AdmissionTest{
         /**
          * Applicant who has entered a negative value for age
          */
-        Applicant app = new Applicant("Tom", "Parker", -19, 3.8f, 4, 1930, "New York", 20, 0);
+        Applicant app = new Applicant.ApplicantBuilder("Tom", "Parker", "New York", -19, 3.8f, 4.0f, 0)
+                .setSAT(1940).setACT(20).build();
         
         AdmissionStrategy stOne = new StrategyOne(app);
                 
@@ -124,7 +129,8 @@ public class AdmissionTest{
         /**
          * Applicant who has committed felonies in the past 5 years
          */
-        Applicant app = new Applicant("Tom", "Parker", 25, 3.8f, 4, 1930, "New York", 20, 2);
+        Applicant app = new Applicant.ApplicantBuilder("Tom", "Parker", "California", 23, 3.8f, 4.0f, 2)
+                .setSAT(1940).setACT(20).build();
         
         AdmissionStrategy stOne = new StrategyOne(app);
                 
@@ -146,7 +152,8 @@ public class AdmissionTest{
         /**
          * Applicant who's gpa scores are below 70%
          */
-        Applicant app = new Applicant("Tom", "Parker", 25, 2.5f, 4, 1930, "New York", 28, 0);
+        Applicant app = new Applicant.ApplicantBuilder("Tom", "Parker", "New York", 25, 2.5f, 4.0f, 0)
+                .setSAT(1940).setACT(20).build();
         
         AdmissionStrategy stOne = new StrategyOne(app);
                 
@@ -168,7 +175,8 @@ public class AdmissionTest{
         /**
          * Applicant who's first name is not in the right format
          */
-        Applicant app = new Applicant("TOm", "Parker", 25, 3.9f, 4, 1930, "New York", 28, 0);
+        Applicant app = new Applicant.ApplicantBuilder("TOm", "Parker", "New York", 25, 3.9f, 4.0f, 0)
+                .setSAT(1940).setACT(28).build();
         
         AdmissionStrategy stOne = new StrategyOne(app);
                 
@@ -190,7 +198,8 @@ public class AdmissionTest{
         /**
          * Applicant who's last name is not in the right format
          */
-        Applicant app = new Applicant("Tom", "parker", 25, 3.9f, 4, 1930, "New York", 28, 0);
+        Applicant app = new Applicant.ApplicantBuilder("Tom", "parker", "New York", 25, 3.9f, 4.0f, 0)
+                .setSAT(1940).setACT(28).build();
         
         AdmissionStrategy stOne = new StrategyOne(app);
                 
@@ -212,8 +221,8 @@ public class AdmissionTest{
         /**
          * Applicant from California but above 26 years of age
          */
-        
-        Applicant app = new Applicant("Souhayl", "Maronesy", 33, 3.9f, 4, 1990, "California", 29, 0);
+        Applicant app = new Applicant.ApplicantBuilder("Souhayl", "Maronesy", "California", 33, 3.9f, 4.0f, 0)
+                .setSAT(1990).setACT(28).build();
         
         AdmissionStrategy stOne = new StrategyOne(app);
         
@@ -233,7 +242,8 @@ public class AdmissionTest{
         /**
          * Applicant is from out of state and not above 80 years of age
          */
-        Applicant app = new Applicant("Souhayl", "Maronesy", 23, 3.7f, 4, 1990, "Washington", 29, 0);
+        Applicant app = new Applicant.ApplicantBuilder("Souhayl", "Maronesy", "Washington", 23, 3.7f, 4f, 0)
+                .setSAT(1990).setACT(28).build();
         
         AdmissionStrategy stOne = new StrategyOne(app);
         
@@ -252,9 +262,10 @@ public class AdmissionTest{
         
         /**
          *  Applicant's gpa is below 90% and above 70%.  
-         *  Calling the constructor with ACT scores
+         *  Calling the constructor without ACT scores
          */
-        Applicant app = new Applicant("Souhayl", "Maronesy", 89, 3.3f, 4, 1980, "Washington", 0);
+        Applicant app = new Applicant.ApplicantBuilder("Sam", "Maronesy", "Washington", 89, 3.3f, 4f, 0)
+                .setSAT(1990).build();
         
         AdmissionStrategy stOne = new StrategyOne(app);
         
@@ -274,7 +285,8 @@ public class AdmissionTest{
         /**
          *  Applicant's SAT and ACT scores both fall below the minimum. 
          */
-        Applicant app = new Applicant("Souhayl", "Maronesy", 89, 3.9f, 4, 1880, "Washington", 22, 0);
+        Applicant app = new Applicant.ApplicantBuilder("Joe", "Marinos", "Washington", 89, 3.9f, 4f, 0)
+                .setSAT(1880).setACT(22).build();
         
         AdmissionStrategy stOne = new StrategyOne(app);
         
@@ -285,4 +297,28 @@ public class AdmissionTest{
         assertFalse(stOne.rejected());
         assertEquals(admDec, "further review");      
     }   
+    
+    @Test
+    public void furtherReviewTestFive() {
+        
+        Admission adm = new Admission();
+        
+        /**
+         *  Applicant's SAT and ACT are both missing, frontend algorithm should not allow Applicant 
+         *  to submit his/her form unless at least one of the scores has been entered. However, since
+         *  failing both is not a reject criteria we will mark it as further review in the backend in 
+         *  case frontend does not catch this scenario. Java compiler will set both scores to 0 by default.
+         */
+        Applicant app = new Applicant.ApplicantBuilder("Joe", "Marinos", "Washington", 89, 3.9f, 4f, 0)
+                .build();
+        
+        AdmissionStrategy stOne = new StrategyOne(app);
+        
+        String admDec = adm.decision(stOne);
+
+        // Assert statements
+        assertFalse(stOne.accepted());
+        assertFalse(stOne.rejected());
+        assertEquals(admDec, "further review");      
+    }  
 }

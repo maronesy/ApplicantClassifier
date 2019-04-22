@@ -1,15 +1,20 @@
+
+
 public class Applicant {
     
+    // required parameters
     private String fName;
     private String lName;
+    private String state;
     private int age;
     private float hsGpa;
     private float gpaScale;
-    private int satScore;
-    private String state;
-    private int actScore;
     private int numFelonies;
     private String decision;
+
+    // optional parameters
+    private int satScore;
+    private int actScore;
     
     /**
      * Constructor storing applicant data
@@ -23,51 +28,16 @@ public class Applicant {
      * @param actScore: Applicant's ACT score
      * @param numFellonies: Number of felonies applicant committed within the last 5 years
      */
-    public Applicant(String fName, String lName, int age, float hsGpa,
-                    float gpaScale, int satScore, String state, int actScore, int numFellonies) {
-        this.fName = fName;
-        this.lName = lName;
-        this.age = age;
-        this.hsGpa = hsGpa;
-        this.gpaScale = gpaScale;
-        this.satScore = satScore;
-        this.state = state;
-        this.actScore = actScore;
-        this.numFelonies = numFellonies;
-        this.decision = "pending";
-    }
-    
-    /**
-     * Another constructor storing applicant data without ACT score
-     */
-    public Applicant(String fName, String lName, int age, float hsGpa,
-            float gpaScale, int satScore, String state, int numFellonies) {
-        this.fName = fName;
-        this.lName = lName;
-        this.age = age;
-        this.hsGpa = hsGpa;
-        this.gpaScale = gpaScale;
-        this.satScore = satScore;
-        this.state = state;
-        this.actScore = -1;
-        this.numFelonies = numFellonies;
-        this.decision = "pending";
-    }
-    
-    /**
-     * Another constructor storing applicant data without SAT score
-     */
-    public Applicant(String fName, String lName, int age, float hsGpa,
-            float gpaScale, String state, int actScore, int numFellonies) {
-        this.fName = fName;
-        this.lName = lName;
-        this.age = age;
-        this.hsGpa = hsGpa;
-        this.gpaScale = gpaScale;
-        this.satScore = -1;
-        this.state = state;
-        this.actScore = actScore;
-        this.numFelonies = numFellonies;
+    private Applicant(ApplicantBuilder builder) {
+        this.fName = builder.fName;
+        this.lName = builder.lName;
+        this.state = builder.state;
+        this.age = builder.age;
+        this.hsGpa = builder.hsGpa;
+        this.satScore = builder.satScore;
+        this.gpaScale = builder.gpaScale;
+        this.actScore = builder.actScore;
+        this.numFelonies = builder.numFelonies;
         this.decision = "pending";
     }
     
@@ -158,4 +128,50 @@ public class Applicant {
     public void setDecision(String dec) {
         decision = dec;
     }
+    
+  //Builder Class
+    public static class ApplicantBuilder{
+
+        // required parameters
+        private String fName;
+        private String lName;
+        private String state;
+        private int age;
+        private float hsGpa;
+        private float gpaScale;
+        private int numFelonies;
+        private String decision;
+
+        // optional parameters
+        private int satScore;
+        private int actScore;
+        
+        public ApplicantBuilder(String fName, String lName, String state, int age, float hsGpa,
+                float gpaScale, int numFelonies){
+            this.fName = fName;
+            this.lName = lName;
+            this.state = state;
+            this.age = age;
+            this.hsGpa = hsGpa;
+            this.gpaScale = gpaScale;
+            this.numFelonies = numFelonies;
+            this.decision = "pending";
+        }
+
+        public ApplicantBuilder setSAT(int satScore) {
+            this.satScore = satScore;
+            return this;
+        }
+
+        public ApplicantBuilder setACT(int actScore) {
+            this.actScore = actScore;
+            return this;
+        }
+        
+        public Applicant build(){
+            return new Applicant(this);
+        }
+
+    }
+
 }
