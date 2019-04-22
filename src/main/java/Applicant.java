@@ -1,4 +1,8 @@
-
+/**
+ * This class implements the builder design pattern for Applicant
+ * @author Souhayl
+ *
+ */
 
 public class Applicant {
     
@@ -129,7 +133,11 @@ public class Applicant {
         decision = dec;
     }
     
-  //Builder Class
+    /**
+     * Builder Design Pattern Static Nested Builder Class
+     * @author Souhayl
+     *
+     */
     public static class ApplicantBuilder{
 
         // required parameters
@@ -146,6 +154,9 @@ public class Applicant {
         private int satScore;
         private int actScore;
         
+        /**
+         * Builder constructor with all the required fields as parameters
+         */
         public ApplicantBuilder(String fName, String lName, String state, int age, float hsGpa,
                 float gpaScale, int numFelonies){
             this.fName = fName;
@@ -158,16 +169,30 @@ public class Applicant {
             this.decision = "pending";
         }
 
+        /**
+         * This method sets the optional field satScore
+         * @param satScore
+         * @return: Updated Applicant object with the sat score
+         */
         public ApplicantBuilder setSAT(int satScore) {
             this.satScore = satScore;
             return this;
         }
 
+        /**
+         * This method sets the optional field actScore
+         * @param actScore
+         * @return: Updated Applicant object with the act score
+         */
         public ApplicantBuilder setACT(int actScore) {
             this.actScore = actScore;
             return this;
         }
         
+        /**
+         * This method returns the Applicant object with the populated applicant data
+         * @return: Populated Applicant object
+         */
         public Applicant build(){
             return new Applicant(this);
         }

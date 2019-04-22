@@ -1,3 +1,8 @@
+/**
+ * One of the Strategy Design Pattern interface implementations(policies)
+ * @author Souhayl
+ */
+
 import java.util.LinkedList;
 
 class StrategyOne implements AdmissionStrategy{

@@ -1,3 +1,8 @@
+/**
+ * The Strategy Design Pattern interface
+ * @author Souhayl
+ *
+ */
 
 public interface AdmissionStrategy{
     
