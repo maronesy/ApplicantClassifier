@@ -79,7 +79,7 @@ public class AdmissionTest{
         Admission adm = new Admission();
         
         /**
-         * Applicant who meets all the reject requirements
+         * Applicant who meets all the reject criteria
          */
         Applicant app = new Applicant.ApplicantBuilder("tom", "ParKer", "New York", -19, 2.0f, 4.0f, 4)
                 .setSAT(1900).setACT(20).build();
@@ -127,7 +127,7 @@ public class AdmissionTest{
         Admission adm = new Admission();
         
         /**
-         * Applicant who has committed felonies in the past 5 years
+         * Applicant who has committed one ore more felonies in the past 5 years
          */
         Applicant app = new Applicant.ApplicantBuilder("Tom", "Parker", "California", 23, 3.8f, 4.0f, 2)
                 .setSAT(1940).setACT(20).build();
@@ -150,7 +150,7 @@ public class AdmissionTest{
         Admission adm = new Admission();
         
         /**
-         * Applicant who's gpa scores are below 70%
+         * Applicant who's gpa score is below 70%
          */
         Applicant app = new Applicant.ApplicantBuilder("Tom", "Parker", "New York", 25, 2.5f, 4.0f, 0)
                 .setSAT(1940).setACT(20).build();
@@ -173,7 +173,7 @@ public class AdmissionTest{
         Admission adm = new Admission();
         
         /**
-         * Applicant who's first name is not in the right format
+         * Applicant who's first name is not in the valid form
          */
         Applicant app = new Applicant.ApplicantBuilder("TOm", "Parker", "New York", 25, 3.9f, 4.0f, 0)
                 .setSAT(1940).setACT(28).build();
@@ -196,7 +196,7 @@ public class AdmissionTest{
         Admission adm = new Admission();
         
         /**
-         * Applicant who's last name is not in the right format
+         * Applicant who's last name is not in the valid form
          */
         Applicant app = new Applicant.ApplicantBuilder("Tom", "parker", "New York", 25, 3.9f, 4.0f, 0)
                 .setSAT(1940).setACT(28).build();
@@ -240,7 +240,7 @@ public class AdmissionTest{
         Admission adm = new Admission();
         
         /**
-         * Applicant is from out of state and not above 80 years of age
+         * Applicant is from out of state and is not above 80 years of age
          */
         Applicant app = new Applicant.ApplicantBuilder("Souhayl", "Maronesy", "Washington", 23, 3.7f, 4f, 0)
                 .setSAT(1990).setACT(28).build();

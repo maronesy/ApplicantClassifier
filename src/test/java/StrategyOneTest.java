@@ -18,7 +18,7 @@ public class StrategyOneTest{
         StrategyOne stOne = new StrategyOne(app);
         
         /**
-         * Assert statements showing that all the criterion have been met
+         * Assert statements showing that all the criteria have been met
          */
         assertTrue(stOne.validateFirstName());
         assertTrue(stOne.validateLastName());
@@ -41,7 +41,7 @@ public class StrategyOneTest{
         StrategyOne stOne = new StrategyOne(app);
 
         /**
-         * Asserts statements showing that none of the criterion have been met
+         * Asserts statements showing that none of the criteria have been met
          */
         assertFalse(stOne.validateFirstName());
         assertFalse(stOne.validateLastName());
