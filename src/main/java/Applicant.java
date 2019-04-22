@@ -24,11 +24,11 @@ public class Applicant {
      * Constructor storing applicant data
      * @param fName: Applicant's first name
      * @param lName: Applicant's last name
+     * @param state: Applicant's state
      * @param age: Applicant's age
      * @param hsGpa: Applicant's high school GPA
      * @param gpaScale: Scale for applicant's GPA
      * @param satScore: Applicant's SAT score
-     * @param state: Applicant's state
      * @param actScore: Applicant's ACT score
      * @param numFellonies: Number of felonies applicant committed within the last 5 years
      */
@@ -38,8 +38,8 @@ public class Applicant {
         this.state = builder.state;
         this.age = builder.age;
         this.hsGpa = builder.hsGpa;
-        this.satScore = builder.satScore;
         this.gpaScale = builder.gpaScale;
+        this.satScore = builder.satScore;
         this.actScore = builder.actScore;
         this.numFelonies = builder.numFelonies;
         this.decision = "pending";
