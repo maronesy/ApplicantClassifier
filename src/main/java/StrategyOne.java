@@ -148,7 +148,7 @@ class StrategyOne implements AdmissionStrategy{
     /**
      * This method calculates the applicant's gpa percentage
      * 
-     * @return: The gpa percentage as a double
+     * @return: The gpa percentage as a float
      */
     public float gpaPercentage() {
         return (app.gethsGPA()/app.getGpaScale())*100;
