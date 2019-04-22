@@ -9,7 +9,7 @@ public class StrategyOneTest{
     @Test
     public void criterionMetTest() {
         
-        Applicant app = new Applicant("Souhayl", "Maronesy", 23, 3.7, 4, 1990, "California", 29, 0);
+        Applicant app = new Applicant("Souhayl", "Maronesy", 23, 3.7f, 4, 1990, "California", 29, 0);
         
         StrategyOne stOne = new StrategyOne(app);
         
@@ -28,7 +28,7 @@ public class StrategyOneTest{
     @Test
     public void criterionNotMetTest() {
         
-        Applicant app = new Applicant("SouHayl", "maronesy", 43, 3.3, 4, 1900, "Washington", 23, 1);
+        Applicant app = new Applicant("SouHayl", "maronesy", 43, 3.3f, 4, 1900, "Washington", 23, 1);
         
         StrategyOne stOne = new StrategyOne(app);
 

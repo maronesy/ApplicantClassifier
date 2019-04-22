@@ -3,7 +3,7 @@ public class Applicant {
     private String fName;
     private String lName;
     private int age;
-    private double hsGpa;
+    private float hsGpa;
     private float gpaScale;
     private int satScore;
     private String state;
@@ -23,7 +23,7 @@ public class Applicant {
      * @param actScore: Applicant's ACT score
      * @param numFellonies: Number of felonies applicant committed within the last 5 years
      */
-    public Applicant(String fName, String lName, int age, double hsGpa,
+    public Applicant(String fName, String lName, int age, float hsGpa,
                     float gpaScale, int satScore, String state, int actScore, int numFellonies) {
         this.fName = fName;
         this.lName = lName;
@@ -40,7 +40,7 @@ public class Applicant {
     /**
      * Another constructor storing applicant data without ACT score
      */
-    public Applicant(String fName, String lName, int age, double hsGpa,
+    public Applicant(String fName, String lName, int age, float hsGpa,
             float gpaScale, int satScore, String state, int numFellonies) {
         this.fName = fName;
         this.lName = lName;
@@ -57,7 +57,7 @@ public class Applicant {
     /**
      * Another constructor storing applicant data without SAT score
      */
-    public Applicant(String fName, String lName, int age, double hsGpa,
+    public Applicant(String fName, String lName, int age, float hsGpa,
             float gpaScale, String state, int actScore, int numFellonies) {
         this.fName = fName;
         this.lName = lName;
@@ -107,7 +107,7 @@ public class Applicant {
      * Getter method for the applicant's high school gpa
      * @return: The GPA variable
      */
-    public double gethsGPA() {
+    public float gethsGPA() {
         return hsGpa;
     }
     

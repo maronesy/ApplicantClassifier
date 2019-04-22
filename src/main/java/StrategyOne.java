@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 class StrategyOne implements AdmissionStrategy{
     
@@ -65,7 +65,7 @@ class StrategyOne implements AdmissionStrategy{
      */
     public String rejectReason() {
         
-        ArrayList<String> rejectList=new ArrayList<String>();
+        LinkedList<String> rejectList=new LinkedList<String>();
         
         if (!felloniesMet()) rejectList.add("1) At Least one Fellony in the past 5 years");
         if (gpaNotMet()) rejectList.add("2) High School GPA was below 70%");
@@ -150,7 +150,7 @@ class StrategyOne implements AdmissionStrategy{
      * 
      * @return: The gpa percentage as a double
      */
-    public double gpaPercentage() {
+    public float gpaPercentage() {
         return (app.gethsGPA()/app.getGpaScale())*100;
     }
 }
